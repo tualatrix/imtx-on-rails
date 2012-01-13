@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ImtxOnRails</title>
+  <title><%= :title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link rel="alternate" type="application/rss+xml" title="Subscribe I'm TualatriX!" href="http://feeds.feedburner.com/tualatrix" />
+  <meta name="google-site-verification" content="dQrNwIxyr9oBaxexqgzQKlenOC-d-7VmT_asQEizeJU" />
 </head>
+
 <body>
+    <div id="bgcontain">
+        <div id="header">
+            <h1><a href="/">I'm TualatriX!</a></h1>
+            <form action="/search/" method="GET">
+            <div>
+                <input type="text" value="Search..." onfocus="if (value =='Search...'){value =''}" onblur="if (value ==''){value='Search...'}" name="s" id="s" />
+                <input type="image" id="searchsubmit" value="Search" src="<%= asset_path "search.gif" %>" />
+            </div>
+            </form>
+        </div>
 
-<%= yield %>
+        <div id="menu">
+        {% get_menu %}
+        </div>
+        <div class="contain">
+            <div id="content" class="narrowcolumn">
+              <%= yield :content %>
+            </div>
+            <%= render "shared/sidebar" %>
+    </div>
+        <hr />
+        <div id="footer">
+            <p>
+            Powered by <a href="http://rubyonrails.org/" rel="external">Rails</a> and <a href="http://imtx.me" title="It's TualatriX's Website.">TualatriX</a>, Theme designed By <a href="http://www.hoofei.com/">Hoofei</a>
+            </p>
+        </div>
 
+    </div>
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-503846-2");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
 </body>
 </html>
