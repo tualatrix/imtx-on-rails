@@ -1,35 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title do %><%= @post.title %><% end %>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @post.date %>
-</p>
-
-<p>
-  <b>Type:</b>
-  <%= @post.type %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @post.status %>
-</p>
-
-<p>
-  <b>Comment status:</b>
-  <%= @post.comment_status %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<% content_for :content do %>
+    <div class="post" id="post-<%= @post.id %>">
+      <%= render :partial => 'title', :locals => { :post => @post } %>
+      <div class="entry">
+        <%= @post.content %>
+      </div>
+    </div>
+<% end %>

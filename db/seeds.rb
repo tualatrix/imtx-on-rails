@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'date'
+
+Post.delete_all
+
+Post.create(title: 'Hello World',
+            content: 'This is your first post',
+            date: DateTime.new(2012,1,13,12))
+
+Post.create(title: 'Hello Rails',
+            content: 'This is your second post',
+            date: DateTime.new(2012,1,14,12))
