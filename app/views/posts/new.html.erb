@@ -15,11 +15,11 @@
     <%= datetime_select :post, :date %>
   </div>
   <div class="field">
-    <%= f.label :type %><br />
-    <%= f.radio_button :type, 'page' %>
-    <%= f.label :type, 'Page' %>
-    <%= f.radio_button :type, 'post', checked: true %>
-    <%= f.label :type, 'Post' %>
+    <%= f.label :post_type %><br />
+    <%= f.radio_button :post_type, 'page' %>
+    <%= f.label :post_type, 'Page' %>
+    <%= f.radio_button :post_type, 'post', checked: true %>
+    <%= f.label :post_type, 'Post' %>
   </div>
   <div class="status">
     <%= f.label :status %><br />

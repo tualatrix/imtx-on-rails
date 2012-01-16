@@ -4,7 +4,7 @@ one:
   title: MyString
   content: MyText
   date: 2012-01-13 16:13:12
-  type: 
+  post_type:
   status: MyString
   comment_status: MyString
 
@@ -12,6 +12,6 @@ two:
   title: MyString
   content: MyText
   date: 2012-01-13 16:13:12
-  type: 
+  post_type:
   status: MyString
   comment_status: MyString

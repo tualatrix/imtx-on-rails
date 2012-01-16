@@ -11,8 +11,10 @@ Post.delete_all
 
 Post.create(title: 'Hello World',
             content: 'This is your first post',
+            post_type: 'post',
             date: DateTime.new(2012,1,13,12))
 
 Post.create(title: 'Hello Rails',
             content: 'This is your second post',
+            post_type: 'post',
             date: DateTime.new(2012,1,14,12))
