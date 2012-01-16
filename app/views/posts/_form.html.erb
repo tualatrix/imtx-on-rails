@@ -25,15 +25,24 @@
   </div>
   <div class="field">
     <%= f.label :post_type %><br />
-    <%= f.text_field :post_type %>
+    <%= f.radio_button :post_type, 'page' %>
+    <%= f.label :post_type, 'Page' %>
+    <%= f.radio_button :post_type, 'post', checked: true %>
+    <%= f.label :post_type, 'Post' %>
   </div>
   <div class="field">
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.radio_button :status, 'publish' %>
+    <%= f.label :status, 'Published' %>
+    <%= f.radio_button :status, 'draft', checked: true %>
+    <%= f.label :status, 'Unpublished' %>
   </div>
   <div class="field">
     <%= f.label :comment_status %><br />
-    <%= f.text_field :comment_status %>
+    <%= f.radio_button :comment_status, 'open', checked: true %>
+    <%= f.label :comment_status, 'Open' %>
+    <%= f.radio_button :comment_status, 'closed' %>
+    <%= f.label :comment_status, 'Closed' %>
   </div>
   <div class="actions">
     <%= f.submit %>

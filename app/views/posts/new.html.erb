@@ -1,42 +1,7 @@
 <% content_for :content do %>
 <h1>New post</h1>
 
-<%= form_for @post do |f| -%>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= datetime_select :post, :date %>
-  </div>
-  <div class="field">
-    <%= f.label :post_type %><br />
-    <%= f.radio_button :post_type, 'page' %>
-    <%= f.label :post_type, 'Page' %>
-    <%= f.radio_button :post_type, 'post', checked: true %>
-    <%= f.label :post_type, 'Post' %>
-  </div>
-  <div class="status">
-    <%= f.label :status %><br />
-    <%= f.radio_button :status, 'publish' %>
-    <%= f.label :status, 'Published' %>
-    <%= f.radio_button :status, 'draft', checked: true %>
-    <%= f.label :status, 'Unpublished' %>
-  </div>
-  <div class="field">
-    <%= f.label :comment_status %><br />
-    <%= f.radio_button :comment_status, 'open', checked: true %>
-    <%= f.label :comment_status, 'Open' %>
-    <%= f.radio_button :comment_status, 'closed' %>
-    <%= f.label :comment_status, 'Closed' %>
-  </div>
-  <%= f.submit "Create" %>
-<% end -%>
+<%= render 'form' %>
 
 <%= link_to 'Back', posts_path %>
 <% end %>
