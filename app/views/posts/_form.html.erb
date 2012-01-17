@@ -25,23 +25,23 @@
   </div>
   <div class="field">
     <%= f.label :post_type %><br />
-    <%= f.radio_button :post_type, 'page' %>
+    <%= f.radio_button :post_type, 'page', checked: @post.is_page? %>
     <%= f.label :post_type, 'Page' %>
-    <%= f.radio_button :post_type, 'post', checked: true %>
+    <%= f.radio_button :post_type, 'post', checked: ! @post.is_page? %>
     <%= f.label :post_type, 'Post' %>
   </div>
   <div class="field">
     <%= f.label :status %><br />
-    <%= f.radio_button :status, 'publish' %>
+    <%= f.radio_button :status, 'publish', checked: @post.published? %>
     <%= f.label :status, 'Published' %>
-    <%= f.radio_button :status, 'draft', checked: true %>
+    <%= f.radio_button :status, 'draft', checked: ! @post.published? %>
     <%= f.label :status, 'Unpublished' %>
   </div>
   <div class="field">
     <%= f.label :comment_status %><br />
-    <%= f.radio_button :comment_status, 'open', checked: true %>
+    <%= f.radio_button :comment_status, 'open', checked: @post.can_comment? %>
     <%= f.label :comment_status, 'Open' %>
-    <%= f.radio_button :comment_status, 'closed' %>
+    <%= f.radio_button :comment_status, 'closed', checked: ! @post.can_comment? %>
     <%= f.label :comment_status, 'Closed' %>
   </div>
   <div class="actions">
