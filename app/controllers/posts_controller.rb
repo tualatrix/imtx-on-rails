@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order('date DESC')
+    @posts = Post.where('post_type = "post" AND status = "publish"').order('date DESC')
 
     respond_to do |format|
       format.html # index.html.erb
