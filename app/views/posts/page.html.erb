@@ -1,0 +1,11 @@
+<% content_for :title do %><%= @page.title %><% end %>
+
+<% content_for :content do %>
+  <div class="post" id="post-<%= @page.id %>">
+      <h2 class="pagetitle"><%= @page.title %></h2>
+      <div class="entry">
+        <%= @page.content %>
+      </div>
+      <p><small><%= link_to "Edit", edit_post_path(@page) %></small></p>
+  </div>
+<% end %>

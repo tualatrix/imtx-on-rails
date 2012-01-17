@@ -53,6 +53,7 @@ ImtxOnRails::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'posts#index'
+  match ':title', :controller => 'posts', :action => 'page'
 
   # See how all your routes lay out with "rake routes"
 

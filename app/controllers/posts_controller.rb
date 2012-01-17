@@ -80,4 +80,8 @@ class PostsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def page
+    @page = Post.find_by_title(params[:title])
+  end
 end
