@@ -11,11 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120113081312) do
+ActiveRecord::Schema.define(:version => 20120118120853) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
     t.string   "slug",        :limit => 50
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "links", :force => true do |t|
+    t.string   "url"
+    t.string   "name"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"

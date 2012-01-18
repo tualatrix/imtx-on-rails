@@ -9,6 +9,7 @@ require 'date'
 
 Post.delete_all
 Category.delete_all
+Link.delete_all
 
 category = Category.create(title: 'Life',
                            slug: 'life',
@@ -34,3 +35,11 @@ Post.create(title: 'About',
             status: 'publish',
             category: category,
             date: DateTime.new(2012,1,14,12))
+
+Link.create(url: 'http://imtx.me',
+            name: "I'm TualatriX",
+            description: 'This is my blog')
+
+Link.create(url: 'http://ubuntu-tweak.com',
+            name: "Ubuntu Tweak",
+            description: 'Ubuntu Tweak official website')

@@ -1,4 +1,6 @@
 ImtxOnRails::Application.routes.draw do
+  resources :links
+
   resources :posts
 
   resources :categories
