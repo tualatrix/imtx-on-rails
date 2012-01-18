@@ -5,7 +5,7 @@
     <div class="post" id="post-<%= post.id %>">
       <%= render :partial => 'title', :locals => { :post => post } %>
       <div class="entry">
-        <%= post.content %>
+        <%= simple_format post.content %>
       </div>
     </div>
   <% end %>
