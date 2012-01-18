@@ -1,20 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% content_for :content do %>
+  <h2 class="pagetitle">Category Archives: <%= @category.title %></h2>
 
-<p>
-  <b>Title:</b>
-  <%= @category.title %>
-</p>
-
-<p>
-  <b>Slug:</b>
-  <%= @category.slug %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @category.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  <% @posts.each do |post| %>
+    <div class="post" id="post-<%= post.id %>">
+      <%= render :partial => 'posts/title', :locals => { :post => post } %>
+    </div>
+  <% end %>
+<% end %>

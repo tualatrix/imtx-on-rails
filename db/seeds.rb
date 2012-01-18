@@ -8,21 +8,29 @@
 require 'date'
 
 Post.delete_all
+Category.delete_all
+
+category = Category.create(title: 'Life',
+                           slug: 'life',
+                           description: 'This is the default category')
 
 Post.create(title: 'Hello World',
             content: 'This is your first post',
             post_type: 'post',
             status: 'publish',
+            category: category,
             date: DateTime.new(2012,1,13,12))
 
 Post.create(title: 'Hello Rails',
             content: 'This is your second post',
             post_type: 'post',
             status: 'publish',
+            category: category,
             date: DateTime.new(2012,1,14,12))
 
 Post.create(title: 'About',
             content: 'Hello! I\'m TualatriX!',
             post_type: 'page',
             status: 'publish',
+            category: category,
             date: DateTime.new(2012,1,14,12))

@@ -4,6 +4,6 @@
 </ul>
 <ul class="title">
   <li class="topic"><%= link_to post.title, post %></a></li>
-  <li class="postmeta">Post by TualatriX at <%= post.date.year %>. Category: Hold this position. 161 Views. 1 Comments. <%= link_to "Edit", edit_post_path(post) %></li>
+  <li class="postmeta">Post by TualatriX at <%= post.date.year %>. Category: <%= link_to post.category.title, category_path(post.category) %>. 161 Views. 1 Comments. <%= link_to "Edit", edit_post_path(post) %></li>
 </ul>
 <div class="clear"></div>

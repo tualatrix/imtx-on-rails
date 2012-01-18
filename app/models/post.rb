@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  belongs_to :category
+
   def published?
     status == 'publish'
   end

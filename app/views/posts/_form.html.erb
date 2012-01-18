@@ -24,6 +24,10 @@
     <%= f.datetime_select :date %>
   </div>
   <div class="field">
+    <%= f.label :category %><br />
+    <%= f.select(:category_id, @categories.map { |category| [ category.title, category.id]}) %>
+  </div>
+  <div class="field">
     <%= f.label :post_type %><br />
     <%= f.radio_button :post_type, 'page', checked: @post.is_page? %>
     <%= f.label :post_type, 'Page' %>
