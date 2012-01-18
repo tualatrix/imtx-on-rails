@@ -1,0 +1,11 @@
+<% content_for :title do %><%= @title %><% end %>
+
+<% content_for :content do %>
+  <h2 class="pagetitle"><%= @title %></h2>
+
+  <% @posts.each do |post| %>
+    <div class="post" id="post-<%= post.id %>">
+      <%= render :partial => 'posts/title', :locals => { :post => post } %>
+    </div>
+  <% end %>
+<% end %>

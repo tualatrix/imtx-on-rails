@@ -54,6 +54,7 @@ ImtxOnRails::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'posts#index'
   match ':title', :controller => 'posts', :action => 'page'
+  match 'archives/:year/:month', :controller => 'posts', :action => 'date_archives'
 
   # See how all your routes lay out with "rake routes"
 

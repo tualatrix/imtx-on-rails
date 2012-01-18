@@ -89,4 +89,12 @@ class PostsController < ApplicationController
   def page
     @page = Post.find_by_title(params[:title])
   end
+
+  def date_archives
+    year = params[:year]
+    month = params[:month]
+    date = DateTime.new(year.to_i, month.to_i)
+    @title = "Monthly Archives: #{date.strftime "%b %Y"}"
+    @posts = Post.where(:date => (date.at_beginning_of_month)..(date.at_end_of_month))
+  end
 end
